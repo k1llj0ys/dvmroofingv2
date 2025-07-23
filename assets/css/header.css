@@ -1,0 +1,105 @@
+/* Header Styles for DVM Roofing & Construction */
+
+/* Sub Header Style */
+.sub-header {
+    background-color: var(--primary-color);
+    height: 46px;
+    line-height: 46px;
+}
+
+.sub-header ul li {
+    display: inline-block;
+}
+
+.sub-header ul.left-info li {
+    border-left: 1px solid var(--transparent-light);
+    padding: 0px 20px;
+    color: var(--light-color);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.sub-header ul.left-info li:last-child {
+    border-right: 1px solid var(--transparent-light);
+}
+
+.sub-header ul.left-info li i {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.sub-header ul.left-info li a {
+    color: var(--light-color);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.sub-header ul.right-icons {
+    float: right;
+}
+
+.sub-header ul.right-icons li {
+    margin-right: -4px;
+    width: 46px;
+    display: inline-block;
+    text-align: center;
+    border-right: 1px solid var(--transparent-light);
+}
+
+.sub-header ul.right-icons li:first-child {
+    border-left: 1px solid var(--transparent-light);
+}
+
+.sub-header ul.right-icons li a {
+    color: var(--light-color);
+    transition: var(--main-transition);
+}
+
+.sub-header ul.right-icons li a:hover {
+    opacity: 0.75;
+}
+
+/* Main Header Style */
+header {
+    position: absolute;
+    z-index: 1500;
+    width: 100%;
+    background-color: transparent!important;
+    height: 80px;
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+    transition: var(--main-transition);
+}
+
+/* Background Header Styles (when scrolled) */
+.background-header {
+    top: 0;
+    position: fixed;
+    z-index: 1500;
+    background-color: var(--light-color)!important;
+    box-shadow: var(--box-shadow);
+}
+
+.background-header .navbar {
+    padding: 10px 0px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .sub-header {
+        /* Keep sub-header visible on mobile */
+        display: block;
+    }
+    
+    /* Adjust sub-header for better mobile display */
+    .sub-header ul.left-info li {
+        padding: 0px 10px;
+        font-size: 12px;
+    }
+    
+    .sub-header ul.left-info li i {
+        margin-right: 5px;
+        font-size: 14px;
+    }
+}

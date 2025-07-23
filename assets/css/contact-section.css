@@ -1,0 +1,73 @@
+/* Contact Information Section Styles */
+
+.contact-information {
+	margin-top: 140px;
+}
+
+.contact-information .contact-item {
+	padding: 60px 29px;
+	background-color: var(--gray-color);
+	text-align: center;
+	border-bottom: 5px solid var(--primary-color);
+}
+
+.contact-information .contact-item i {
+	color: var(--primary-color);
+	font-size: 48px;
+	margin-bottom: 40px;
+}
+
+.contact-information .contact-item h4 {
+	font-size: 20px;
+	font-weight: 700;
+	letter-spacing: 0.25px;
+	margin-bottom: 15px;
+	color: var(--primary-color);
+}
+
+.contact-information .contact-item p {
+	margin-bottom: 20px;
+	height: 110px;
+}
+
+.contact-information .contact-item a {
+	font-weight: 600;
+	color: var(--primary-color);
+	font-size: 15px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+	.contact-information {
+		margin-top: 80px;
+	}
+	
+	.contact-information .contact-item {
+		padding: 40px 20px;
+		margin-bottom: 30px;
+	}
+	
+	.contact-information .contact-item p {
+		height: auto;
+		min-height: 80px;
+	}
+}
+
+@media (max-width: 576px) {
+	.contact-information .contact-item {
+		padding: 30px 15px;
+	}
+	
+	.contact-information .contact-item i {
+		font-size: 36px;
+		margin-bottom: 20px;
+	}
+	
+	.contact-information .contact-item h4 {
+		font-size: 18px;
+	}
+	
+	.contact-information .contact-item p {
+		min-height: 60px;
+	}
+}

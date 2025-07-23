@@ -1,0 +1,135 @@
+/* Testimonials Section Styles */
+
+.testimonials {
+	margin-top: 140px;
+	background-color: var(--gray-color);
+	padding: 140px 0px;
+}
+
+.owl-testimonials {
+	position: relative;
+	padding-bottom: 60px; /* Add space for navigation below */
+}
+
+.testimonial-item {
+	background-color: var(--gray-color);
+	border-top: 5px solid var(--primary-color);
+}
+
+.testimonial-item .inner-content {
+	text-align: center;
+	background-color: var(--light-color);	
+	padding: 30px;
+	border-radius: 5px;
+}
+
+.testimonial-item p {
+	font-size: 14px;
+	font-weight: 400;
+}
+
+.testimonial-item h4 {
+	font-size: 19px;
+	font-weight: 700;
+	color: var(--primary-color);
+	letter-spacing: 0.5px;
+	margin-bottom: 0px;
+}
+
+.testimonial-item span {
+	display: inline-block;
+	margin-top: 8px;
+	font-weight: 600;
+	font-size: 14px;
+	color: var(--primary-color);
+}
+
+.testimonial-item img {
+	max-width: 60px;
+	border-radius: 50%;
+	margin: 25px auto 0px auto;
+	object-fit: cover; /* Maintain aspect ratio and cover the container */
+	object-position: center; /* Center the image within the container */
+}
+
+/* Owl Carousel Styles */
+.owl-testimonials .owl-nav {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	gap: 200px;
+	margin-top: 15px;
+	z-index: 20; /* Ensure nav is above dots */
+}
+
+.owl-testimonials .owl-nav button.owl-prev,
+.owl-testimonials .owl-nav button.owl-next {
+	background: var(--primary-color) !important;
+	color: white !important;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	font-size: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0.7;
+	transition: opacity 0.3s ease;
+	position: static; /* Remove absolute positioning */
+}
+
+.owl-testimonials .owl-nav button.owl-prev:hover,
+.owl-testimonials .owl-nav button.owl-next:hover {
+	opacity: 1;
+}
+
+.owl-testimonials .owl-dots {
+	margin-top: 15px;
+	text-align: center;
+	position: absolute;
+	bottom: 15px;
+	width: 100%;
+	display: block !important; /* Force display of dots */
+	visibility: visible !important; /* Ensure visibility */
+	z-index: 10;
+}
+
+.owl-testimonials .owl-dots .owl-dot {
+	display: inline-block !important;
+	margin: 0 5px;
+	opacity: 1 !important;
+	visibility: visible !important;
+}
+
+.owl-testimonials .owl-dots .owl-dot span {
+	background: rgba(0, 0, 0, 0.5);
+	width: 12px;
+	height: 12px;
+	display: block !important;
+	border-radius: 50%;
+	border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.owl-testimonials .owl-dots .owl-dot.active span {
+	background: var(--primary-color);
+	width: 14px;
+	height: 14px;
+	border: 2px solid white;
+}
+
+/* Responsive Styles */
+@media (max-width: 576px) {
+	.owl-testimonials {
+		padding-bottom: 70px; /* More space for controls on mobile */
+	}
+	
+	.owl-testimonials .owl-dots {
+		bottom: 25px;
+	}
+	
+	.owl-testimonials .owl-nav {
+		bottom: -5px;
+	}
+}

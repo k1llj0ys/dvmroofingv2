@@ -1,0 +1,207 @@
+/* Navbar Styles for DVM Roofing & Construction */
+
+/* Basic Navbar Structure */
+header .navbar {
+    padding: 20px 0px;
+}
+
+.navbar .navbar-brand {
+    float: left;
+    margin-top: 12px;
+    outline: none;
+}
+
+.navbar .navbar-brand img {
+    max-height: 50px;
+    max-width: 200px;
+    transition: all 0.3s ease;
+}
+
+.navbar .navbar-brand .logo-white,
+.navbar .navbar-brand .logo-color {
+    position: relative;
+}
+
+.navbar .navbar-brand h2 {
+    color: var(--light-color);
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 700;
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+    transition: var(--main-transition);
+}
+
+.navbar .navbar-brand h2 em {
+    font-style: normal;
+    font-size: 16px;
+}
+
+/* Navbar Collapse and Navigation */
+#navbarResponsive {
+    z-index: 999;
+}
+
+.navbar-collapse {
+    text-align: center;
+}
+
+.navbar .navbar-nav .nav-item {
+    margin: 0px 15px;
+}
+
+.navbar .navbar-nav a.nav-link {
+    text-transform: capitalize;
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    color: var(--light-color);
+    transition: var(--main-transition);
+    margin-top: 5px;
+}
+
+/* Navbar Link States */
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .active>.nav-link,
+.navbar .navbar-nav .nav-link.current,
+.navbar .navbar-nav .nav-link.show,
+.navbar .navbar-nav .show>.nav-link {
+    color: var(--secondary-color);
+    border-bottom: 3px solid var(--secondary-color);
+}
+
+/* Current/Active Section Indicator */
+.navbar .navbar-nav .nav-link.current {
+    color: var(--secondary-color);
+    font-weight: 600;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Default active indicator for home section */
+.navbar .navbar-nav .nav-link[href="#top"].current::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--secondary-color);
+    /* Animation removed */
+}
+
+/* Different color for other section indicators */
+.navbar .navbar-nav .nav-link:not([href="#top"]).current::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-color);
+    /* Animation removed */
+}
+
+/* Animation keyframes removed */
+
+/* Navbar Toggler for Mobile */
+.navbar .navbar-toggler-icon {
+    background-image: none;
+}
+
+.navbar .navbar-toggler {
+    height: 36px;
+    outline: none;
+    border-radius: 0px;
+    position: absolute;
+    right: 30px;
+    top: 20px;
+}
+
+.navbar .navbar-toggler-icon:after {
+    content: '\f0c9';
+    color: var(--primary-color);
+    font-size: 18px;
+    line-height: 26px;
+    font-family: 'FontAwesome';
+}
+
+/* Background Header Styles (when scrolled) */
+.background-header .navbar-brand h2 {
+    color: var(--primary-color)!important;
+}
+
+.background-header .navbar-nav a.nav-link {
+    color: var(--dark-blue) !important;
+}
+
+.background-header .navbar-nav .nav-link:hover,
+.background-header .navbar-nav .active>.nav-link,
+.background-header .navbar-nav .nav-link.current,
+.background-header .navbar-nav .nav-link.show,
+.background-header .navbar-nav .show>.nav-link {
+    color: var(--primary-color)!important;
+    border-bottom: 3px solid var(--primary-color);
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 992px) {
+    .navbar .navbar-brand {
+        position: absolute;
+        left: 30px;
+        top: 10px;
+        width: auto;
+    }
+    
+    .navbar:after {
+        display: none;
+    }
+    
+    #navbarResponsive {
+        z-index: 99999;
+        position: absolute;
+        top: 80px;
+        left: 49%;
+        width: 50%;
+        text-align: center;
+        background-color: var(--light-color);
+        box-shadow: var(--box-shadow);
+    }
+    
+    .navbar .navbar-nav .nav-item {
+        border-bottom: 1px solid var(--gray-color);
+    }
+    
+    .navbar .navbar-nav .nav-item:last-child {
+        border-bottom: none;
+    }
+    
+    .navbar .navbar-nav a.nav-link {
+        padding: 15px 0px;
+        color: var(--primary-color)!important;
+    }
+    
+    .navbar .navbar-nav .nav-link:hover,
+    .navbar .navbar-nav .active>.nav-link,
+    .navbar .navbar-nav .nav-link.current,
+    .navbar .navbar-nav .nav-link.show,
+    .navbar .navbar-nav .show>.nav-link {
+        color: var(--primary-color)!important;
+        border-bottom: 3px solid var(--primary-color)!important;
+    }
+
+    /* Default hamburger icon color */
+    .navbar .navbar-toggler-icon:after {
+        content: '\f0c9';
+        color: var(--secondary-color);
+        font-size: 18px;
+        line-height: 26px;
+        font-family: 'FontAwesome';
+    }
+    
+    /* Primary color for hamburger icon when not on home section */
+    body:not([data-section="top"]) .navbar .navbar-toggler-icon:after {
+        color: var(--primary-color);
+    }
+}

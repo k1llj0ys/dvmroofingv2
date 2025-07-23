@@ -1,0 +1,415 @@
+/* 
+General Styles for DVM Roofing and Construction
+*/
+
+body {
+  font-family: var(--main-font);
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+	margin-bottom: 0px;
+	font-size: 14px;
+	color: var(--text-color);
+	line-height: 30px;
+}
+
+a {
+	text-decoration: none!important;
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	margin: 0px;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Section Heading Styles */
+.section-heading {
+	text-align: center;
+	margin-bottom: 80px;
+}
+
+.section-heading h2 {
+	font-size: 36px;
+	font-weight: 600;
+	color: var(--primary-color);
+}
+
+.section-heading em {
+	font-style: normal;
+	color: var(--dark-blue);
+}
+
+.section-heading span {
+	display: block;
+	margin-top: 15px;
+	text-transform: uppercase;
+	font-size: 15px;
+	color: var(--text-color);
+	letter-spacing: 1px;
+}
+
+/* Page Heading Styles */
+.page-heading {
+	text-align: center;
+	background-image: url(../images/page-heading-bg.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 230px 0px 150px 0px;
+	color: var(--light-color);
+}
+
+.page-heading h1 {
+	text-transform: capitalize;
+	font-size: 36px;
+	font-weight: 700;
+	letter-spacing: 2px;
+	margin-bottom: 18px;
+}
+
+.page-heading span {
+	font-size: 15px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: var(--light-color);
+	display: block;
+}
+
+/* Count Area Styles */
+.count-area-content {
+	text-align: center;
+	background-color: var(--transparent-light);
+	padding: 25px 30px 35px 30px;
+	margin: 15px 0px;
+}
+
+.count-digit {
+    margin: 5px 0px;
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 36px;
+}
+
+.count-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--light-color);
+    letter-spacing: 0.5px;
+}
+
+/* Preloader Styles */
+#preloader {
+  overflow: hidden;
+  background: var(--primary-color);
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: fixed;
+  z-index: 9999999;
+  color: var(--light-color);
+}
+
+#preloader .jumper {
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  position: absolute;
+  margin: auto;
+  width: 50px;
+  height: 50px;
+}
+
+#preloader .jumper > div {
+  background-color: var(--light-color);
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  position: absolute;
+  opacity: 0;
+  width: 50px;
+  height: 50px;
+}
+
+/* Callback Form Styles */
+.callback-services {
+	border-top: 1px solid #eee;
+	padding-top: 140px;
+}
+
+.contact-us {
+	background-color: var(--gray-color);
+	padding: 140px 0px;
+}
+
+.contact-us .contact-form {
+	background-color: transparent!important;
+	padding: 0!important;
+}
+
+.callback-form {
+	margin-top: 140px;
+}
+
+.callback-form .contact-form {
+	background-color: var(--primary-color);
+	padding: 60px;
+	border-radius: 5px;
+	text-align: center;
+}
+
+.callback-form .contact-form input {
+	border-radius: 20px;
+	height: 40px;
+	line-height: 40px;
+	display: inline-block;
+	padding: 0px 15px;
+	color: var(--text-color);
+	font-size: 13px;
+	text-transform: none;
+	box-shadow: none;
+	border: none;
+	margin-bottom: 35px;
+}
+
+.callback-form .contact-form input:focus {
+	outline: none;
+	box-shadow: none;
+	border: none;
+}
+
+.callback-form .contact-form textarea {
+	border-radius: 20px;
+	height: 120px;
+	max-height: 200px;
+	min-height: 120px;
+	display: inline-block;
+	padding: 15px;
+	color: var(--text-color);
+	font-size: 13px;
+	text-transform: none;
+	box-shadow: none;
+	border: none;
+	margin-bottom: 35px;
+}
+
+.callback-form .contact-form textarea:focus {
+	outline: none;
+	box-shadow: none;
+	border: none;
+}
+
+.callback-form .contact-form ::-webkit-input-placeholder { /* Edge */
+  color: var(--gray-color);
+}
+.callback-form .contact-form :-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: var(--gray-color);
+}
+.callback-form .contact-form ::placeholder {
+  color: var(--gray-color);
+}
+
+/* Partners Styles */
+.contact-partners {
+	margin-top: -8px!important;
+}
+
+.partners {
+	margin-top: 140px;
+	background-color: var(--gray-color);
+	padding: 60px 0px;
+}
+
+.partners .owl-item {
+	text-align: center;
+	cursor: pointer;
+}
+
+.partners .partner-item img {
+	max-width: 156px;
+	margin: auto;
+}
+
+/* Team Styles */
+.team {
+	background-color: var(--gray-color);
+	margin-top: 140px;
+	margin-bottom: -140px;
+	padding: 120px 0px;
+}
+
+.team-item img {
+	width: 100%;
+	overflow: hidden;
+}
+
+.team-item .down-content {
+	background-color: var(--light-color);
+	padding: 30px;
+}
+
+.team-item .down-content h4 {
+	font-size: 20px;
+	font-weight: 700;
+	letter-spacing: 0.25px;
+	margin-bottom: 10px;
+}
+
+.team-item .down-content span {
+	color: var(--primary-color);
+	font-weight: 600;
+	font-size: 14px;
+	display: block;
+	margin-bottom: 15px;
+}
+
+.team-item .down-content p {
+	margin-bottom: 20px;
+}
+
+/* Tabs Styles */
+.single-services {
+	margin-top: 140px;
+}
+
+#tabs ul {
+  margin: 0;
+  padding: 0;
+}
+
+#tabs ul li {
+  margin-bottom: 10px;
+  display: inline-block;
+  width: 100%;
+}
+
+#tabs ul li:last-child {
+  margin-bottom: 0px;
+}
+
+#tabs ul li a {
+	text-transform: capitalize;
+	width: 100%;
+	padding: 30px 30px;
+	display: inline-block;
+	background-color: var(--primary-color);
+  	font-size: 20px;
+  	color: #121212;
+  	letter-spacing: 0.5px;
+  	font-weight: 700;
+  	transition: var(--main-transition);
+}
+
+#tabs ul li a i {
+	float: right;
+	margin-top: 5px;
+}
+
+#tabs ul .ui-tabs-active span {
+  background: #faf5b2;
+  border: #faf5b2;
+  line-height: 90px;
+  border-bottom: none;
+}
+
+#tabs ul .ui-tabs-active a {
+  color: var(--light-color);
+}
+
+#tabs ul .ui-tabs-active span {
+  color: var(--secondary-color);
+}
+
+.tabs-content {
+	margin-left: 30px;
+  text-align: left;
+  display: inline-block;
+  transition: var(--main-transition);
+}
+
+.tabs-content img {
+	max-width: 100%;
+	overflow: hidden;
+}
+
+.tabs-content h4 {
+	font-size: 20px;
+	font-weight: 700;
+	letter-spacing: 0.25px;
+	margin-bottom: 15px;
+	margin-top: 30px;
+}
+
+.tabs-content p {
+  font-size: 14px;
+  color: var(--text-color);
+  margin-bottom: 0px;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+	.banner-content .text-content {
+		width: 80%;
+	}
+	.banner-content .item h4 {
+		font-size: 36px;
+	}
+}
+
+@media (max-width: 480px) {
+	.banner-content .item h4 {
+		font-size: 24px;
+	}
+	.banner-content .item h6 {
+		font-size: 18px;
+	}
+}
+
+@media (max-width: 768px) {
+	/* Keep sub-header visible on mobile */
+	.banner-content .text-content {
+		width: 90%;
+		margin-top: 20px;
+	}
+	.banner-content .item h4 {
+		font-size: 28px;
+	}
+	.services .service-item {
+		margin-bottom: 30px;
+	}
+	.faqs .left-content {
+		margin-right: 0px;
+		margin-bottom: 30px;
+	}
+	.about-info .right-content {
+		margin-right: 0px;
+		margin-bottom: 30px;
+	}
+	.team .team-item {
+		margin-bottom: 30px;
+	}
+	.tabs-content {
+		margin-left: 0px;
+		margin-top: 30px;
+	}
+}

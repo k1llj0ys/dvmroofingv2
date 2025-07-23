@@ -1,0 +1,79 @@
+/* About Section Styles */
+.more-info {
+    margin-top: 140px;
+}
+
+.more-info .left-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.more-info .left-image img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.more-info .more-info-content {
+    background-color: var(--gray-color);
+}
+
+.more-info .right-content {
+    padding: 45px 45px 45px 30px;
+}
+
+.more-info .right-content span {
+    text-transform: uppercase;
+    font-size: 15px;
+    color: var(--text-color);
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.more-info .right-content h2 {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 35px;
+    color: var(--primary-color);
+}
+
+.more-info .right-content em {
+    font-style: normal;
+    color: var(--dark-blue);
+}
+
+.more-info .right-content p {
+    margin-bottom: 30px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .more-info {
+        margin-top: 80px;
+    }
+    .more-info .right-content {
+        padding: 30px;
+    }
+    .more-info .left-image {
+        padding: 10px;
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .more-info .left-image {
+        padding: 8px;
+    }
+    .more-info .left-image img {
+        max-width: 100%;
+        height: auto;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 3px;
+    }
+}

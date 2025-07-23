@@ -1,0 +1,126 @@
+/* Services Section Styles */
+
+.services {
+	margin-top: 140px;
+}
+
+.service-item {
+	margin: 0 10px;
+}
+
+.service-item img {
+	width: 100%;
+	height: 250px; /* Set uniform height */
+	object-fit: cover; /* Maintain aspect ratio and cover the container */
+	object-position: center; /* Center the image within the container */
+	overflow: hidden;
+}
+
+.service-item .down-content {
+	background-color: var(--gray-color);
+	padding: 30px;
+	height: 400px; /* Auto height to fit content */
+	display: flex;
+	flex-direction: column;
+	border-bottom: 4px solid var(--primary-color);
+}
+
+.service-item .down-content h4 {
+	font-size: 20px;
+	font-weight: 700;
+	letter-spacing: 0.25px;
+	margin-bottom: 15px;
+	flex-shrink: 0; /* Prevent title from shrinking */
+	color: var(--primary-color);
+}
+
+.service-item .down-content p {
+	margin-bottom: 20px;
+	flex-grow: 1; /* Allow paragraph to take available space */
+}
+
+/* Owl Carousel Styles */
+.owl-services {
+	position: relative;
+	padding-bottom: 80px; /* Add space for navigation below */
+}
+
+.owl-services .owl-nav {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	gap: 200px;
+	margin-top: 15px;
+	z-index: 20; /* Ensure nav is above dots */
+}
+
+.owl-services .owl-nav button.owl-prev,
+.owl-services .owl-nav button.owl-next {
+	background: var(--primary-color) !important;
+	color: white !important;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	font-size: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0.7;
+	transition: opacity 0.3s ease;
+	position: static; /* Remove absolute positioning */
+}
+
+.owl-services .owl-nav button.owl-prev:hover,
+.owl-services .owl-nav button.owl-next:hover {
+	opacity: 1;
+}
+
+.owl-services .owl-dots {
+	margin-top: 15px;
+	text-align: center;
+	position: absolute;
+	bottom: 15px;
+	width: 100%;
+	display: block !important; /* Force display of dots */
+	visibility: visible !important; /* Ensure visibility */
+	z-index: 10;
+}
+
+.owl-services .owl-dots .owl-dot {
+	display: inline-block !important;
+	margin: 0 5px;
+	opacity: 1 !important;
+	visibility: visible !important;
+}
+
+.owl-services .owl-dots .owl-dot span {
+	background: rgba(0, 0, 0, 0.5);
+	width: 12px;
+	height: 12px;
+	display: block !important;
+	border-radius: 50%;
+	border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.owl-services .owl-dots .owl-dot.active span {
+	background: var(--primary-color);
+	width: 14px;
+	height: 14px;
+	border: 2px solid white;
+}
+
+/* Responsive Styles */
+@media (min-width: 992px) {
+	.owl-services .owl-nav {
+		gap: 200px; /* Increased gap for web view */
+		margin-bottom: 10px; /* Add some space below the navigation */
+	}
+}
+
+@media (max-width: 768px) {
+	.services .service-item {
+		margin-bottom: 30px;
+	}
+}

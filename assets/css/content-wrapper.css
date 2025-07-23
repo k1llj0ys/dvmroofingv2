@@ -1,0 +1,101 @@
+/* Content Wrapper Styles for DVM Roofing & Construction */
+
+/* Container for text-content and inspection-form */
+.content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: absolute;
+    z-index: 1;
+    top: 55%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    gap: 100px;
+}
+
+/* Adjust text-content positioning within the wrapper */
+.content-wrapper .text-content {
+    position: relative;
+    /* width: 45%;
+    max-width: 500px; */
+    top: auto;
+    left: auto;
+    transform: none;
+    padding-left: 0;
+    text-align: left;
+}
+
+/* Adjust inspection-form positioning within the wrapper */
+.content-wrapper .inspection-form {
+    position: relative;
+    width: 380px;
+    top: auto;
+    right: auto;
+    transform: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .content-wrapper {
+        width: 95%;
+    }
+    
+    .content-wrapper .text-content {
+        width: 50%;
+    }
+}
+
+@media (max-width: 992px) {
+    .content-wrapper {
+        flex-direction: column;
+        top: 0;
+        transform: none;
+        padding: 100px 0;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .content-wrapper .text-content {
+        width: 80%;
+        text-align: left;
+        margin-bottom: 30px;
+    }
+    
+    .content-wrapper .inspection-form {
+        width: 80%;
+        max-width: 450px;
+    }
+    
+    .content-wrapper .text-content p {
+        margin: 0 0 30px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .content-wrapper .text-content {
+        width: 90%;
+    }
+    
+    .content-wrapper .inspection-form {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .content-wrapper {
+        padding: 0px 0;
+    }
+    
+    .content-wrapper .text-content {
+        width: 95%;
+    }
+    
+    .content-wrapper .inspection-form {
+        width: 95%;
+    }
+}

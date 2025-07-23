@@ -1,0 +1,212 @@
+/* FAQs Section Styles */
+
+.faqs {
+	margin-top: 140px;
+	background-image: url(../images/faqs-bg.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	padding: 140px 0px;
+	color: var(--light-color);
+	background: linear-gradient(rgba(14, 91, 143, 0.9), rgba(10, 59, 92, 0.95)), url('../images/faqs-bg.jpg');
+}
+
+.faqs span {
+	text-transform: uppercase;
+	font-size: 15px;
+	color: var(--light-color);
+	letter-spacing: 1px;
+	margin-bottom: 10px;
+	display: block;
+}
+
+.faqs h2 {
+	font-size: 36px;
+	font-weight: 600;
+	margin-bottom: 35px;
+}
+
+.faqs .section-heading h2 {
+    color: var(--secondary-color);
+}
+
+.faqs em {
+	font-style: normal;
+	color: var(--primary-color);
+}
+
+.faqs p {
+	color: var(--light-color);
+	margin-bottom: 20px;
+}
+
+.faqs .left-content {
+	margin-right: 45px;
+}
+
+/* FAQ Item Styles */
+.faqs .faq-item {
+	background: rgba(255, 255, 255, 0.1);
+	padding: 25px;
+	border-radius: 15px;
+	margin-bottom: 25px;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	width: 100%;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	position: relative;
+	overflow: hidden;
+	min-height: 200px; /* Ensure consistent height for carousel items */
+	display: flex;
+	flex-direction: column;
+}
+
+.faqs .faq-item:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+	border-color: var(--primary-color);
+}
+
+.faqs .faq-item h4 {
+	color: var(--light-color);
+	margin-bottom: 15px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+	font-size: 20px;
+	font-weight: 600;
+	letter-spacing: 0.5px;
+	transition: all 0.3s ease;
+}
+
+.faqs .faq-item:hover h4 {
+	color: var(--secondary-color);
+	border-bottom-color: var(--primary-color);
+}
+
+.faqs .faq-item p {
+	line-height: 1.6;
+	font-size: 15px;
+	padding: 5px 0;
+	color: var(--light-color);
+	transition: all 0.3s ease;
+}
+
+/* FAQ Carousel Styles */
+.owl-faq {
+	position: relative;
+	padding-bottom: 60px; /* Add space for navigation below */
+}
+
+.owl-faq .owl-nav {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	gap: 200px;
+	margin-top: 15px;
+	z-index: 20; /* Ensure nav is above dots */
+}
+
+.owl-faq .owl-nav button.owl-prev,
+.owl-faq .owl-nav button.owl-next {
+	background: var(--primary-color) !important;
+	color: white !important;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	font-size: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0.7;
+	transition: opacity 0.3s ease;
+	position: static; /* Remove absolute positioning */
+}
+
+.owl-faq .owl-nav button.owl-prev:hover,
+.owl-faq .owl-nav button.owl-next:hover {
+	opacity: 1;
+}
+
+.owl-faq .owl-dots {
+	margin-top: 15px;
+	text-align: center;
+	position: absolute;
+	bottom: 15px;
+	width: 100%;
+	display: block !important; /* Force display of dots */
+	visibility: visible !important; /* Ensure visibility */
+	z-index: 10;
+}
+
+.owl-faq .owl-dots .owl-dot {
+	display: inline-block !important;
+	margin: 0 5px;
+	opacity: 1 !important;
+	visibility: visible !important;
+}
+
+.owl-faq .owl-dots .owl-dot span {
+	background: rgba(255, 255, 255, 0.5);
+	width: 12px;
+	height: 12px;
+	display: block !important;
+	border-radius: 50%;
+	border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.owl-faq .owl-dots .owl-dot.active span {
+	background: var(--primary-color);
+	width: 14px;
+	height: 14px;
+	border: 2px solid white;
+}
+
+/* Responsive Styles */
+@media (max-width: 767px) {
+	.faqs {
+		padding: 80px 0px;
+	}
+	
+	.faqs .faq-item {
+		padding: 20px;
+		margin-bottom: 15px;
+		min-height: 220px;
+	}
+	
+	.faqs .faq-item h4 {
+		font-size: 18px;
+		margin-bottom: 10px;
+		padding-bottom: 8px;
+	}
+	
+	.faqs .faq-item p {
+		font-size: 14px;
+		line-height: 1.5;
+	}
+	
+	.owl-faq {
+		padding: 0 10px;
+	}
+	
+	.faqs .left-content {
+		margin-right: 0px;
+		margin-bottom: 30px;
+	}
+}
+
+@media (max-width: 576px) {
+	.owl-faq {
+		padding-bottom: 70px; /* More space for controls on mobile */
+	}
+	
+	.owl-faq .owl-dots {
+		bottom: 25px;
+	}
+	
+	.owl-faq .owl-nav {
+		bottom: -5px;
+	}
+}
