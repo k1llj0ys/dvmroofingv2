@@ -43,6 +43,103 @@
 	margin-right: 45px;
 }
 
+/* FAQ Tabs Styles */
+.faq-tabs-container {
+	width: 100%;
+	margin-bottom: 30px;
+}
+
+.faq-tabs-list {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.faq-tab-item {
+	background: rgba(255, 255, 255, 0.1);
+	padding: 15px 20px;
+	border-radius: 10px 0 0 10px;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	border-right: none;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	position: relative;
+}
+
+.faq-tab-item:hover {
+	background: rgba(255, 255, 255, 0.2);
+	transform: translateX(5px);
+}
+
+.faq-tab-item.active {
+	background: rgba(255, 255, 255, 0.25);
+	border-color: var(--primary-color);
+	border-right: none;
+}
+
+.faq-tab-item.active::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 5px;
+	height: 100%;
+	background: var(--primary-color);
+	border-radius: 3px 0 0 3px;
+}
+
+.faq-tab-item h4 {
+	color: var(--light-color);
+	font-size: 18px;
+	font-weight: 500;
+	margin: 0;
+	transition: all 0.3s ease;
+}
+
+.faq-tab-item:hover h4,
+.faq-tab-item.active h4 {
+	color: var(--secondary-color);
+}
+
+.faq-tabs-content {
+	background: rgba(255, 255, 255, 0.15);
+	border-radius: 0 15px 15px 15px;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	padding: 0;
+	overflow: hidden;
+}
+
+.faq-content-item {
+	padding: 30px;
+	display: none;
+	animation: fadeIn 0.5s ease;
+	height: 100%;
+}
+
+@keyframes fadeIn {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+.faq-content-item.active {
+	display: block;
+}
+
+.faq-content-item h4 {
+	color: var(--secondary-color);
+	font-size: 24px;
+	font-weight: 600;
+	margin-bottom: 20px;
+	padding-bottom: 10px;
+	border-bottom: 2px solid var(--primary-color);
+}
+
+.faq-content-item p {
+	font-size: 16px;
+	line-height: 1.8;
+	color: var(--light-color);
+}
+
 /* FAQ Item Styles */
 .faqs .faq-item {
 	background: rgba(255, 255, 255, 0.1);
@@ -163,6 +260,17 @@
 }
 
 /* Responsive Styles */
+@media (max-width: 991px) {
+	/* Adjustments for medium screens */
+	.faq-tab-item h4 {
+		font-size: 16px;
+	}
+	
+	.faq-content-item h4 {
+		font-size: 20px;
+	}
+}
+
 @media (max-width: 767px) {
 	.faqs {
 		padding: 80px 0px;
@@ -192,6 +300,11 @@
 	.faqs .left-content {
 		margin-right: 0px;
 		margin-bottom: 30px;
+	}
+	
+	/* Ensure tabs don't show on mobile */
+	.faq-tabs-container {
+		display: none !important;
 	}
 }
 

@@ -24,6 +24,19 @@ jQuery( document ).ready(function( $ ) {
     
         $(function() {
             $( "#tabs" ).tabs();
+            
+            // FAQ Tabs functionality
+            $('.faq-tab-item').on('click', function() {
+                const tabId = $(this).data('tab');
+                
+                // Remove active class from all tabs and content
+                $('.faq-tab-item').removeClass('active');
+                $('.faq-content-item').removeClass('active');
+                
+                // Add active class to clicked tab and corresponding content
+                $(this).addClass('active');
+                $('#' + tabId).addClass('active');
+            });
         });
 
 
