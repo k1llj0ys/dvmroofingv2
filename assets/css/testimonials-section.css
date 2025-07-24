@@ -21,10 +21,11 @@
 	background-color: var(--light-color);	
 	padding: 30px;
 	border-radius: 5px;
+	height: 250px;
 }
 
 .testimonial-item p {
-	font-size: 14px;
+	font-size: 15px;
 	font-weight: 400;
 }
 

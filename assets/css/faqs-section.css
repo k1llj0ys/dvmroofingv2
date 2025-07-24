@@ -2,14 +2,12 @@
 
 .faqs {
 	margin-top: 140px;
-	background-image: url(../images/faqs-bg.jpg);
+	background: linear-gradient(rgba(14, 91, 143, 0.9), rgba(10, 59, 92, 0.95)), url('../images/faqs-bg.jpg');
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-attachment: fixed;
 	padding: 140px 0px;
 	color: var(--light-color);
-	background: linear-gradient(rgba(14, 91, 143, 0.9), rgba(10, 59, 92, 0.95)), url('../images/faqs-bg.jpg');
 }
 
 .faqs span {

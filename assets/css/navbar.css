@@ -2,15 +2,14 @@
 
 /* Basic Navbar Structure */
 header .navbar {
-    padding: 2px 0px;
+    padding: 8px 0px;
 }
 
 /* Glass-like background for navbar on web */
 @media (min-width: 769px) {
     header:not(.background-header) .navbar {
-        background: rgba(14, 91, 143, 0.2); /* Using primary color with transparency */
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
+        background: rgba(14, 91, 143, 0.2);
+        backdrop-filter: blur(2px);
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     }
