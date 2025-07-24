@@ -2,12 +2,27 @@
 
 /* Basic Navbar Structure */
 header .navbar {
-    padding: 20px 0px;
+    padding: 2px 0px;
+}
+
+/* Glass-like background for navbar on web */
+@media (min-width: 769px) {
+    header:not(.background-header) .navbar {
+        background: rgba(14, 91, 143, 0.2); /* Using primary color with transparency */
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .background-header .navbar {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
 }
 
 .navbar .navbar-brand {
     float: left;
-    margin-top: 12px;
     outline: none;
 }
 
@@ -54,11 +69,12 @@ header .navbar {
 .navbar .navbar-nav a.nav-link {
     text-transform: capitalize;
     font-size: 15px;
-    font-weight: 300;
+    font-weight: 400; /* Slightly increased weight for better visibility */
     letter-spacing: 0.5px;
     color: var(--light-color);
     transition: var(--main-transition);
     margin-top: 5px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15); /* Subtle text shadow for better readability */
 }
 
 /* Navbar Link States */
@@ -69,6 +85,7 @@ header .navbar {
 .navbar .navbar-nav .show>.nav-link {
     color: var(--secondary-color);
     border-bottom: 3px solid var(--secondary-color);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 /* Current/Active Section Indicator */
