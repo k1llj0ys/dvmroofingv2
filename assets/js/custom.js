@@ -117,12 +117,11 @@ jQuery( document ).ready(function( $ ) {
 	$('#captcha-check, #terms-check').on('change', checkFormValidity);
 	
 	// Form validation before submit
-	$('form').on('submit', function(e) {
+	$('#contact-form').on('submit', function(e) {
+		e.preventDefault(); // Always prevent default form submission
 		const validity = checkFormValidity();
 		
 		if (!validity.isPhoneValid || !validity.isEmailValid) {
-			e.preventDefault();
-			
 			if (!validity.isPhoneValid) {
 				const phoneInput = $(this).find('input[name="phone"]');
 				phoneInput.addClass('invalid-input');
@@ -134,8 +133,46 @@ jQuery( document ).ready(function( $ ) {
 				emailInput.siblings('.input-help').addClass('error-text');
 				emailInput.focus();
 			}
+		} else {
+			// Form is valid, show success modal
+			showSuccessModal();
+			
+			// Reset the form
+			this.reset();
+			
+			// Disable submit button after form reset
+			$('form .schedule-btn').prop('disabled', true).addClass('disabled-btn');
 		}
 	});
+	
+	// Function to show success modal
+	function showSuccessModal() {
+		const successModal = $('#success-modal');
+		successModal.addClass('show');
+		document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+		
+		// Add event handlers for closing the success modal
+		$('#success-modal .close-modal, #success-modal .close-success-btn').on('click', function() {
+			successModal.removeClass('show');
+			document.body.style.overflow = ''; // Restore scrolling
+		});
+		
+		// Close Success Modal when clicking outside
+		$(window).on('click', function(e) {
+			if ($(e.target).is(successModal)) {
+				successModal.removeClass('show');
+				document.body.style.overflow = '';
+			}
+		});
+		
+		// Close Success Modal with Escape key
+	$(document).on('keydown', function(e) {
+		if (e.key === 'Escape') {
+			successModal.removeClass('show');
+			document.body.style.overflow = '';
+		}
+	});
+	}
 
 
     // Initialize logo visibility based on scroll position
@@ -155,6 +192,9 @@ jQuery( document ).ready(function( $ ) {
     
     // Call on page load
     initLogoVisibility();
+    
+    // Set active menu item on page load
+    setActiveMenuItemOnScroll();
     
         $(function() {
             $( "#tabs" ).tabs();

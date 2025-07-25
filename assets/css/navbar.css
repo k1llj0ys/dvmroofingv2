@@ -103,7 +103,7 @@ header .navbar {
     left: 0;
     width: 100%;
     height: 3px;
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     /* Animation removed */
 }
 
@@ -219,5 +219,16 @@ header .navbar {
     /* Primary color for hamburger icon when not on home section */
     body:not([data-section="top"]) .navbar .navbar-toggler-icon:after {
         color: var(--primary-color);
+    }
+
+    .navbar .navbar-nav .nav-link[href="#top"].current::after {
+        content: '';
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: var(--primary-color);
+        /* Animation removed */
     }
 }

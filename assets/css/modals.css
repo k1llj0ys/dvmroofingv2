@@ -407,3 +407,44 @@
     display: inline-block;
     margin-right: 5px;
 }
+
+/* Success Modal */
+#success-modal .modal-content {
+    border-top: 5px solid #28a745; /* Green color for success */
+    max-width: 500px;
+    text-align: center;
+}
+
+#success-modal h2 {
+    color: #28a745;
+}
+
+#success-modal .success-icon {
+    font-size: 60px;
+    color: #28a745;
+    margin: 20px 0;
+}
+
+#success-modal .modal-body p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+#success-modal .close-success-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+#success-modal .close-success-btn:hover {
+    background-color: #0c4b76; /* Darker shade of primary color */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
