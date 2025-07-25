@@ -2,6 +2,140 @@ jQuery( document ).ready(function( $ ) {
 
 
 	"use strict";
+	
+	// Disable submit button by default
+	$('form .schedule-btn').prop('disabled', true).addClass('disabled-btn');
+	
+	// Function to validate email
+	function validateEmail(email) {
+		const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+		return emailRegex.test(email);
+	}
+	
+	// Function to validate phone number
+	function validatePhone(phone) {
+		const phoneRegex = /^(\+?1[\s-]?)?(\([0-9]{3}\)|[0-9]{3})[\s-]?[0-9]{3}[\s-]?[0-9]{4}$/;
+		return phoneRegex.test(phone);
+	}
+	
+	// Function to check if all form fields are valid
+	function checkFormValidity() {
+		const form = $('form');
+		const firstName = form.find('input[name="firstname"]').val().trim();
+		const lastName = form.find('input[name="lastname"]').val().trim();
+		const email = form.find('input[name="email"]').val().trim();
+		const phone = form.find('input[name="phone"]').val().trim();
+		const captchaChecked = $('#captcha-check').is(':checked');
+		const termsChecked = $('#terms-check').is(':checked');
+		
+		const isEmailValid = validateEmail(email);
+		const isPhoneValid = validatePhone(phone);
+		
+		// Enable submit button only if all fields are valid and checkboxes are checked
+		if (firstName && lastName && isEmailValid && isPhoneValid && captchaChecked && termsChecked) {
+			$('form .schedule-btn').prop('disabled', false).removeClass('disabled-btn');
+		} else {
+			$('form .schedule-btn').prop('disabled', true).addClass('disabled-btn');
+		}
+		
+		return {
+			isEmailValid: isEmailValid,
+			isPhoneValid: isPhoneValid
+		};
+	}
+	
+	// Email validation
+	$('input[name="email"]').on('input', function() {
+		const email = $(this).val().trim();
+		const isValid = validateEmail(email);
+		
+		// Update validation UI
+		if (email && !isValid) {
+			$(this).addClass('invalid-input');
+			if (!$(this).siblings('.input-help').length) {
+				$(this).after('<small class="input-help">Please enter a valid email address</small>');
+			}
+			$(this).siblings('.input-help').addClass('error-text');
+		} else {
+			$(this).removeClass('invalid-input');
+			$(this).siblings('.input-help').removeClass('error-text');
+		}
+		
+		checkFormValidity();
+	});
+	
+	// Phone number formatting and validation
+	$('input[name="phone"]').on('input', function() {
+		// Get input value and remove all non-digit characters
+		let input = $(this).val().replace(/\D/g, '');
+		
+		// Format the phone number as user types
+		let formatted = '';
+		if (input.length > 0) {
+			// Handle country code if present
+			if (input.length > 10 && input.charAt(0) === '1') {
+				formatted = '1-';
+				input = input.substring(1);
+			}
+			
+			// Format the area code
+			if (input.length > 0) {
+				formatted += input.length > 3 ? '(' + input.substring(0, 3) + ') ' : '(' + input.substring(0, input.length);
+			}
+			
+			// Format the exchange code
+			if (input.length > 3) {
+				formatted += input.length > 6 ? input.substring(3, 6) + '-' : input.substring(3, input.length);
+			}
+			
+			// Format the line number
+			if (input.length > 6) {
+				formatted += input.substring(6, Math.min(10, input.length));
+			}
+		}
+		
+		// Update the input value with formatted number
+		$(this).val(formatted);
+		
+		// Validate the phone number
+		const isValid = validatePhone(formatted);
+		
+		// Update validation UI
+		if (formatted && !isValid) {
+			$(this).addClass('invalid-input');
+			$(this).siblings('.input-help').addClass('error-text');
+		} else {
+			$(this).removeClass('invalid-input');
+			$(this).siblings('.input-help').removeClass('error-text');
+		}
+		
+		checkFormValidity();
+	});
+	
+	// Monitor other form fields and checkboxes
+	$('input[name="firstname"], input[name="lastname"]').on('input', checkFormValidity);
+	$('#captcha-check, #terms-check').on('change', checkFormValidity);
+	
+	// Form validation before submit
+	$('form').on('submit', function(e) {
+		const validity = checkFormValidity();
+		
+		if (!validity.isPhoneValid || !validity.isEmailValid) {
+			e.preventDefault();
+			
+			if (!validity.isPhoneValid) {
+				const phoneInput = $(this).find('input[name="phone"]');
+				phoneInput.addClass('invalid-input');
+				phoneInput.siblings('.input-help').addClass('error-text');
+				phoneInput.focus();
+			} else if (!validity.isEmailValid) {
+				const emailInput = $(this).find('input[name="email"]');
+				emailInput.addClass('invalid-input');
+				emailInput.siblings('.input-help').addClass('error-text');
+				emailInput.focus();
+			}
+		}
+	});
 
 
     // Initialize logo visibility based on scroll position

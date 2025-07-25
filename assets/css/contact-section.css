@@ -4,6 +4,39 @@
 	margin-top: 140px;
 }
 
+/* Form Validation Styles */
+.invalid-input {
+	border: 2px solid #ff3b30 !important;
+	background-color: rgba(255, 59, 48, 0.05) !important;
+}
+
+.error-text {
+	color: #ff3b30 !important;
+	font-weight: 600 !important;
+}
+
+.input-help {
+	display: block;
+	font-size: 12px;
+	color: #666;
+	margin-top: 5px;
+	transition: color 0.3s ease;
+}
+
+/* Disabled Button Styles */
+.disabled-btn {
+	opacity: 0.6 !important;
+	cursor: not-allowed !important;
+	background-color: #999 !important;
+	border-color: #777 !important;
+}
+
+.disabled-btn:hover {
+	background-color: #999 !important;
+	border-color: #777 !important;
+	color: #fff !important;
+}
+
 .contact-information .contact-item {
 	padding: 60px 29px;
 	background-color: var(--gray-color);
