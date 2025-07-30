@@ -4,7 +4,7 @@
 .modal {
     display: none;
     position: fixed;
-    z-index: 2000;
+    z-index: 9999; /* Increased z-index to be higher than header */
     left: 0;
     top: 0;
     width: 100%;
@@ -49,6 +49,7 @@
     transform: translateY(0);
     transition: transform 0.4s ease;
     animation: modalFadeIn 0.5s ease forwards;
+    margin-top: 40px; /* Increased margin to prevent overlap with header */
 }
 
 /* Referral Program Modal Content */
@@ -289,11 +290,11 @@
 /* Responsive Styles */
 @media screen and (max-width: 768px) {
     .modal.show {
-        padding-top: 20%;
+        padding-top: 25%;
     }
     .modal-content {
         width: 95%;
-        margin: 5% auto;
+        margin: 10% auto;
         padding: 20px;
     }
     
@@ -329,10 +330,14 @@
 
 /* Small Screen Adjustments */
 @media screen and (max-width: 480px) {
+    .modal.show {
+        padding-top: 30%;
+    }
     .modal-content {
         width: 95%;
         padding: 15px;
-        max-height: 85%;
+        max-height: 80%;
+        margin: 15% auto;
     }
     
     .modal-content h2 {
