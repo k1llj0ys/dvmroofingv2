@@ -15,7 +15,6 @@
     right: 0;
     transform: translateY(-50%);
     gap: 100px;
-    padding-top: 80px; /* Added padding to prevent overlap with navbar */
 }
 
 /* Adjust text-content positioning within the wrapper */
@@ -55,7 +54,7 @@
         flex-direction: column;
         top: 0;
         transform: none;
-        padding: 150px 0 100px; /* Increased top padding for mobile */
+        padding: 100px 0;
         gap: 20px;
         justify-content: center;
         align-items: center;

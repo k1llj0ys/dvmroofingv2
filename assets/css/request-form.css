@@ -6,13 +6,13 @@
 }
 
 .request-form h4 {
-    font-size: 20px;
+    font-size: 28px;
     font-weight: 600;
     color: var(--dark-blue);
 }
 
 .request-form span {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 400;
     display: inline-block;
     margin-top: 10px;
@@ -29,6 +29,21 @@
     .request-form {
         text-align: center;
     }
+
+    .request-form h4 {
+        font-size: 20px;
+        font-weight: 600;
+        color: var(--dark-blue);
+    }
+
+    .request-form span {
+        font-size: 13px;
+        font-weight: 400;
+        display: inline-block;
+        margin-top: 10px;
+        color: var(--dark-blue);
+    }
+
     .request-form a.border-button {
         float: none;
         margin-top: 30px;

@@ -98,7 +98,7 @@
 
 .faq-tab-item:hover h4,
 .faq-tab-item.active h4 {
-	color: var(--secondary-color);
+	color: var(--light-color);
 }
 
 .faq-tabs-content {
@@ -126,7 +126,7 @@
 }
 
 .faq-content-item h4 {
-	color: var(--secondary-color);
+	color: var(--light-color);
 	font-size: 24px;
 	font-weight: 600;
 	margin-bottom: 20px;
