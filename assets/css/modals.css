@@ -4,7 +4,7 @@
 .modal {
     display: none;
     position: fixed;
-    z-index: 2000;
+    z-index: 9999;
     left: 0;
     top: 0;
     width: 100%;
@@ -21,6 +21,7 @@
     align-items: center;
     justify-content: center;
     opacity: 1;
+    z-index: 9999;
 }
 
 /* Referral Program Modal Specific Styles */
@@ -32,23 +33,32 @@
     background-attachment: fixed;
 } */
 
+#referral-program-modal .modal-body {
+    padding: 20px 30px 30px;
+    overflow-y: auto;
+    max-height: calc(80vh - 100px);
+}
+
 /* Modal Content */
 .modal-content {
     background-color: #fff;
     margin: 0;
-    padding: 30px;
+    padding: 0;
     border: none;
     border-radius: 15px;
     width: 90%;
     max-width: 800px;
     max-height: 80%;
-    overflow-y: auto;
+    overflow-y: hidden;
     box-shadow: var(--box-shadow);
     position: relative;
     color: var(--dark-color);
     transform: translateY(0);
     transition: transform 0.4s ease;
     animation: modalFadeIn 0.5s ease forwards;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Referral Program Modal Content */
@@ -56,6 +66,8 @@
     background: rgba(255, 255, 255, 0.95);
     border: 1px solid var(--primary-color);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
 }
 
 @keyframes modalFadeIn {
@@ -74,9 +86,14 @@
     text-align: center;
     color: var(--primary-color);
     font-size: 28px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding: 30px 30px 15px;
+    border-bottom: 2px solid var(--primary-color);
     font-weight: 600;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    margin: 0;
+    z-index: 2;
 }
 
 /* Referral Program Modal Title */
@@ -85,10 +102,14 @@
     font-size: 32px;
     font-weight: 700;
     text-align: center;
-    padding-bottom: 15px;
-    margin-bottom: 20px;
+    padding: 30px 30px 15px;
+    margin: 0;
     border-bottom: 2px solid var(--primary-color);
     text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    z-index: 2;
 }
 
 /* Close Button */
@@ -108,6 +129,7 @@
     justify-content: center;
     border-radius: 50%;
     background: rgba(0,0,0,0.05);
+    z-index: 3;
 }
 
 .close-modal:hover {
@@ -122,8 +144,11 @@
 
 /* Modal Body */
 .modal-body {
-    margin-top: 20px;
+    margin-top: 0;
     line-height: 1.6;
+    padding: 20px 30px 30px;
+    overflow-y: auto;
+    max-height: calc(80vh - 80px);
 }
 
 .modal-body p, .modal-body ul, .modal-body ol {
