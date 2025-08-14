@@ -62,28 +62,92 @@
 }
 
 .banner-content .item h6 {
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 700;
     letter-spacing: 1px;
     color: var(--primary-color);
-    margin: 10px 0px;
-    padding: 12px;
+    margin: 20px 0px;
+    padding: 14px 22px;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
     background-color: var(--secondary-color);
-    border-radius: 10px;
+    border-radius: 30px;
     width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+    animation: slideIn 1s ease-out 0.6s both;
+}
+
+.banner-content .item h6:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    background-color: #ffcf30;
+}
+
+.banner-content .item h6 i {
+    font-size: 18px;
+    color: var(--dark-blue);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .banner-content .item h4 {
     text-transform: uppercase;
-    font-size: 48px;
-    font-weight: 700;
+    font-size: 52px;
+    font-weight: 800;
     letter-spacing: 2.5px;
-    color: var(--accent-color);
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--secondary-color) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: #ffffff;
     overflow: hidden;
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    margin-bottom: 5px;
+    margin-bottom: 15px;
+    position: relative;
+    /* animation: fadeInUp 1s ease-out; */
+    padding: 5px 0;
+    border-bottom: 3px solid var(--secondary-color);
+    display: inline-block;
 }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
 
 .banner-content .item p {
     max-width: 570px;
@@ -91,13 +155,117 @@
     font-size: 22px;
     font-weight: 400;
     line-height: 30px;
-    margin-bottom: 40px;
+    margin-bottom: 25px;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    position: relative;
+    padding-left: 15px;
+    /* border-left: 3px solid rgba(255, 255, 255, 0.3); */
 }
 
 .banner-content .item .highlight-text {
     color: var(--secondary-color);
     font-weight: 700;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Pre-heading style */
+.banner-content .pre-heading {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--secondary-color);
+    background-color: rgba(247, 197, 43, 0.15);
+    padding: 8px 15px;
+    border-radius: 30px;
+    margin-bottom: 15px;
+    border-left: 3px solid var(--secondary-color);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    animation: fadeInDown 0.8s ease-out;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Banner features style */
+.banner-features {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+    margin-bottom: 30px;
+    animation: fadeIn 1.2s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.banner-features .feature {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: var(--light-color);
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.banner-features .feature:nth-child(1) {
+    animation: featureSlideIn 0.5s ease-out 0.8s both;
+}
+
+.banner-features .feature:nth-child(2) {
+    animation: featureSlideIn 0.5s ease-out 1s both;
+}
+
+.banner-features .feature:nth-child(3) {
+    animation: featureSlideIn 0.5s ease-out 1.2s both;
+}
+
+@keyframes featureSlideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+
+.banner-features .feature:hover {
+    transform: translateY(-3px);
+    background-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.banner-features .feature i {
+    color: var(--secondary-color);
+    font-size: 18px;
     position: relative;
     padding: 0 2px;
 }
@@ -184,6 +352,10 @@ a.border-button:hover {
     .banner-content .item h6 {
         font-size: 18px;
     }
+    
+    .banner-features {
+        gap: 10px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -193,7 +365,8 @@ a.border-button:hover {
         top: 55%;
     }
     .banner-content .item h4 {
-        font-size: 28px;
+        font-size: 38px;
+        padding: 0 15px;
     }
     /* Adjust banner height for mobile with visible sub-header */
     .banner-content .item .img-fill {
@@ -204,6 +377,31 @@ a.border-button:hover {
         padding: 25px 20px;
     }
     /* Request form responsive styles moved to request-form.css */
+    
+    .banner-features {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .banner-features .feature {
+        width: 100%;
+        max-width: 250px;
+        justify-content: center;
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+    
+    .banner-content .item p {
+        text-align: center;
+    }
+    
+
+    
+    .banner-content .item h6 {
+        font-size: 18px;
+        padding: 12px 18px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -236,6 +434,11 @@ a.border-button:hover {
 
     .banner-content .item p {
         margin: 0 auto 30px auto;
+        text-align: center;
+        border-left: none;
+        padding-left: 0;
+        border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+        padding-bottom: 15px;
     }
 
     .banner-content .item .inspection-form {
@@ -256,4 +459,29 @@ a.border-button:hover {
         min-height: 100vh;
         padding: 100px 0;
     }
+    
+    .banner-features {
+        justify-content: center;
+    }
+    
+    .banner-content .pre-heading {
+        margin: 0 auto 15px;
+        display: table;
+    }
+    
+    .banner-content .item h6 {
+        margin: 15px auto;
+        text-align: center;
+    }
+    
+    .banner-content .item h4 {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 46px;
+        width: 100%;
+        max-width: 500px;
+    }
+    
+
 }
