@@ -223,7 +223,7 @@
 
 /* Referral Program Modal Body Styles */
 #referral-program-modal .modal-body {
-    padding: 15px;
+    padding: 40px;
     background: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
 }
